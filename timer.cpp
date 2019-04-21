@@ -4,16 +4,21 @@
 // --------
 // 07/21/96 M. Gill   Initial pthread port.
 // 04/26/95 M. Gill   Initial C++ (QCYCLE) port.
-// 01/10/88 M. Gill   Initial creation.
+// 01/10/85 M. Gill   Initial creation.
 // ----------------------------------------------------------------------------
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
 #include <timer.h>
+#include <CDaemonEventLogger.h>
+#include <CDaemonErrorLogger.h>
 
-static timer_started =0;	// Timer services flag.
-static TIMER_NODE timerq;	// Timer Q
-static pthread_mutex_t timerq_cs;	// Critical section for timerq.
+static int timer_started =0;	  // Timer services flag.
+static TIMER_NODE timerq;	  // Timer Q
+static pthread_mutex_t timerq_cs; // Critical section for timerq.
+
+extern CDaemonEventLogger *event_log;
+extern CDaemonErrorLogger *error_log;
 
 //----------------------------------------------------------------------------
 // FUNCTION TIMER::Main()
@@ -40,9 +45,19 @@ static pthread_mutex_t timerq_cs;	// Critical section for timerq.
 //		For any embedded system, the timer interrupt handler
 //		should invoke TIMER::Main().
 //-----------------------------------------------------------------------------
-void TIMER::Main( void *context)
+int TIMER::Main( TIMER *x)
 {
     TIMER_NODE *t, *next;
+
+    //-----------------------------------------
+    // Register this thread with loggers...
+    //-----------------------------------------
+    event_log->Register(pthread_self(),"TIMER");
+    error_log->Register(pthread_self(),"TIMER");
+
+    //-------------------------------------------
+    // Timers are searched ever second...
+    //-------------------------------------------
     for(;;)
     {
     sleep(1);
@@ -192,8 +207,6 @@ TIMER::~TIMER()
 //-----------------------------------------------------------------------------
 TIMER::TIMER()
 {
-    int rc;
-
     //-----------------------
     // Every instance gets 
     // a TIMER_NODE.
@@ -213,24 +226,12 @@ TIMER::TIMER()
 	
 	tmr_stack_size = 4096;
 	pthread_attr_init(&tmr_attr);
-	pthread_attr_setstacksize(
-			      &tmr_attr,
-			      tmr_stack_size);
-	rc =pthread_create(&tmr_id,		// Thread ID 
-		           &tmr_attr, 		// Thread attributes
-		   (void * (*)(void *))Main, 	// Start function
-		   (void *)0 );			// Start function Argument
-		   
+	pthread_attr_setstacksize(&tmr_attr,tmr_stack_size);
+        pthread_create(&tmr_id,      // Thread ID
+		       &tmr_attr,    // Thread attributes
+           (void * (*)(void *))Main, // Start function
+           (void *)this );           // Start function Argument
     }
   
     return;
 }
-
-
-
-
-
-
-
-
-

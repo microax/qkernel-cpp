@@ -3,8 +3,8 @@
 // History:
 // --------
 // 07/21/96 M. Gill 	Initial pthread port.
-// 01/10/96 M. Gill	Solaris 2.5 port.
-// 01/10/88 M. Gill 	Initial creation.
+// 01/10/95 M. Gill	Solaris 2.5 port.
+// 01/10/85 M. Gill 	Initial creation.
 // ----------------------------------------------------------------------------
 #include <sem.h>
 

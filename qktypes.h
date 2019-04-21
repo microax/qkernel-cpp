@@ -4,7 +4,7 @@
 //  --------
 //  11/26/95 M. Gill    Add LPNODE, LPTHREAD_START_ROUTINE.
 //  04/26/95 M. Gill    Initial C++ port.
-//  01/10/88 M. Gill	Initial creation.
+//  01/10/85 M. Gill	Initial creation.
 // ---------------------------------------------------------------------------
 #ifndef	QKTYPES_H
 #define	QKTYPES_H

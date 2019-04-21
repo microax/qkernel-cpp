@@ -11,7 +11,7 @@
 //			   This will allow other application tasks 
 //			   to view post processed messages. 
 //
-// 03/01/96 M. Gill	Initial creation. (based from EVL.cpp)
+// 03/01/95 M. Gill	Initial creation. (based from EVL.cpp)
 //-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <string.h>
@@ -85,7 +85,7 @@ int CDaemonErrorLogger::MessageHandler(RESOURCE_NODE *t)
 	GetMessageTime(t, time_string);
 	PostHoldQueue(t);		// Save just in case...
     	sprintf(tmp2,
-		"%s %s Severity - %d %s\n",
+		"%s %s Severity%d %s\n",
 		time_string, sender_name, de->mSeverity, de->mMessage);
  
 	if(mLogName[0] != 0)

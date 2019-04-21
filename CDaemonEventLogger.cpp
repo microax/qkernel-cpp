@@ -10,7 +10,7 @@
 //			   This will allow other application tasks 
 //			   to view post processed messages. 
 //
-// 03/01/96 M. Gill	Initial creation (based from EVL.cpp)
+// 03/01/95 M. Gill	Initial creation (based from EVL.cpp)
 //-----------------------------------------------------------------------------
 #include <CDaemonEventLogger.h>
 #include <CDaemon.h>

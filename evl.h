@@ -4,7 +4,7 @@
 // --------
 // 07/21/96 M. Gill     Include qkernel.h
 // 04/04/96 M. Gill	Add overloaded SendMessage method. (stub)
-// 01/02/96 M. Gill	Initial creation.
+// 01/02/95 M. Gill	Initial creation.
 //----------------------------------------------------------------------------
 #ifndef EVL_H
 #define EVL_H

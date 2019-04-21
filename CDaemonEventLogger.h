@@ -4,7 +4,7 @@
 // --------
 // 07/21/96 M. Gill     Include qkernel.h
 // 07/01/96 M. Gill     Update to remove "Diaper" etc.
-// 03/01/96 M. Gill	Initial creation.
+// 03/01/95 M. Gill	Initial creation.
 //-----------------------------------------------------------------------------
 #ifndef _CDAEMONEVENTLOGGER_H_
 #define _CDAEMONEVENTLOGGER_H_

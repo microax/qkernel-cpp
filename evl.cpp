@@ -7,7 +7,7 @@
 //			2) Add overloaded method 'SendMessage' with
 //			   severity option.
 //			
-// 01/02/96 M. Gill     Initial creation.
+// 01/02/95 M. Gill     Initial creation.
 //-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <qkernel.h>

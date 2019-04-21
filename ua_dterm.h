@@ -3,7 +3,7 @@
 // History:
 // --------
 // 07/15/96 M. Gill     Support new single instance FSM.
-// 04/18/96 M. Gill	Initial creation.
+// 04/18/95 M. Gill	Initial creation.
 //-----------------------------------------------------------------------------
 #ifndef UA_DTERM_H
 #define UA_DTERM_H

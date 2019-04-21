@@ -7,8 +7,8 @@
 // 07/21/96 M. Gill     Initial pthread port.
 // 07/15/96 M. Gill     New single instance FSM.
 // 04/23/96 N. Radisch  moved INVALID_EVENT and INIT_OK into sysevents file
-// 01/10/96 M. Gill	Solaris 2.5 port.
-// 01/10/88 M. Gill	Initial Creation.
+// 01/10/95 M. Gill	Solaris 2.5 port.
+// 01/10/85 M. Gill	Initial Creation.
 //----------------------------------------------------------------------------
 #ifndef FSM_H
 #define FSM_H
@@ -80,16 +80,5 @@ public:
     void Attach(STATE_TABLE *app_table);
 };
 #endif
-
-
-
-
-
-
-
-
-
-
-
 
 

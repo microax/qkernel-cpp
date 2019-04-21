@@ -1,25 +1,24 @@
 ##############################################
-# Brute force qkernel build
+# basic qkernel build
 #############################################
 
 ############################################
 # Library paths & Publish directory
 ############################################
-PTHREADLIB = -L/usr/lib
-PUB_DIR	   =  /home/mgill/projects/qkernel_ports/linux
+PTHREADLIB = -L/usr/lib//x86_64-linux-gnu
+PUB_DIR	   =  .
 
 ###########################################
 # Include directories
 ###########################################
 PTHREADINC = -I/usr/include
-
 QKINC 	   = -I$(PUB_DIR)
 
 ###################
 # Compiler options
 ###################
 CCOPT  = $(QKINC) $(PTHREADINC)
-CC     = g++ -c -w -D_REENTRANT $(CCOPT)
+CC     = g++ -c -w -fpermissive $(CCOPT)
 
 ###########################
 # Local objects & headers
@@ -34,13 +33,13 @@ OBJECTS= evl.o\
 	 ua_dterm.o\
 	 ua_diag.o\
 	 sio.o\
-	 timer.o\
 	 queue.o\
 	 sem.o\
 	 CDaemon.o\
 	 CDaemonErrorLogger.o\
 	 CDaemonEventLogger.o\
-	 
+	 timer.o\
+
 HEADERS= ua_dterm.h\
 	 ua_diag.h\
 	 asc.h\
@@ -64,14 +63,10 @@ HEADERS= ua_dterm.h\
 	 sio.h
 
 test.bin	:libqkernel.a  test.o $(HEADERS)
-		gcc -o $(PUB_DIR)/test.bin test.o -L$(PUB_DIR) -lqkernel
+		g++ -o $(PUB_DIR)/test.bin test.o -L$(PUB_DIR) $(PTHREADLIB) -lpthread -lqkernel
 
 libqkernel.a 	:$(OBJECTS) $(HEADERS)
-		gcc -r -nostdlib -o\
-		$(PUB_DIR)/libqkernel.a $(OBJECTS) $(PTHREADLIB) -lpthread
-
-test.o			:test.cpp test.h $(HEADERS)
-			$(CC) test.cpp
+		ar cr $(PUB_DIR)/libqkernel.a $(OBJECTS)
 
 CDaemon.o		:CDaemon.cpp $(HEADERS)
 			$(CC) CDaemon.cpp
@@ -127,10 +122,9 @@ sem.o			:sem.cpp $(HEADERS)
 test.o			:test.cpp $(HEADERS)
 			$(CC) test.cpp
 
-
-
-
-
-
-
-
+clean			:
+			@rm -f $(PUB_DIR)/libqkernel.a || true
+			@rm -f $(PUB_DIR)/*.o          || true
+			@rm -f $(PUB_DIR)/test.bin     || true
+			@rm -f $(PUB_DIR)/testd.pid    || true
+			@rm -f $(PUB_DIR)/testd.log    || true

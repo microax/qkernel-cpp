@@ -4,8 +4,8 @@
 // --------
 // 07/21/96 M. Gill    Initial pthread port.
 // 07/11/96 M. Gill    Add includes for all CDaemon, and tcp classes.
-// 01/10/96 M. Gill    Initial Solaris 2.5 port
-// 01/10/88 M. Gill    Initial creation.
+// 01/10/95 M. Gill    Initial Solaris 2.5 port
+// 01/10/85 M. Gill    Initial creation.
 //---------------------------------------------------------------------------
 
 #ifndef QKERNEL_H

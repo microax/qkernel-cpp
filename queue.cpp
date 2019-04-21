@@ -4,7 +4,7 @@
 // --------
 // 01/11/96 M. Gill	   Solaris 2.5 port.
 // 04/26/95 M. Gill        Initial C++ (QCYCLE) port.
-// 01/10/88 M. Gill        Initial creation.
+// 01/10/85 M. Gill        Initial creation.
 // ----------------------------------------------------------------------------
 //
 #include <qkernel.h>

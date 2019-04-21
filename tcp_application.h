@@ -3,7 +3,7 @@
 // History:
 // --------
 // 07/15/96 M. Gill     support new single instance FSM.
-// 04/17/96 M. Gill	Initial creation.
+// 04/17/95 M. Gill	Initial creation.
 //-----------------------------------------------------------------------------
 #ifndef TCP_APPLICATION_H
 #define TCP_APPLICATION_H

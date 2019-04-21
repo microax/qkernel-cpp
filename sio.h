@@ -3,7 +3,7 @@
 // History:
 // --------
 // 07/15/96 M. Gill     Support new single instance FSM.
-// 04/04/96 M. Gill	Initial creation.
+// 04/04/95 M. Gill	Initial creation.
 //-----------------------------------------------------------------------------
 #ifndef SIO_H
 #define SIO_H

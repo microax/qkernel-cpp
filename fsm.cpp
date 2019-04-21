@@ -5,7 +5,7 @@
 // 07/14/96 M. Gill	New single instance FSM.
 // 01/10/96 M. Gill	Initial Solaris port.
 // 04/26/95 M. Gill	Initial C++ (QCYCLE) port.
-// 01/10/88 M. Gill	Initial creation.
+// 01/10/85 M. Gill	Initial creation.
 //----------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
@@ -186,7 +186,7 @@ void FSM::Attach(STATE_TABLE *app_table)
     {
 	for( j = 0; j < NUMBER_OF_EVENTS; j++ )
 	{
-	    port->State[i][j].action = (ACTION_FUNC)InvalidEvent;
+	    port->State[i][j].action = (ACTION_FUNC) &FSM::InvalidEvent;
 	    port->State[i][j].next_state = i;
 	}
     }
@@ -287,17 +287,4 @@ FSM::FSM(void)
 {
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

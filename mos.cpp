@@ -6,7 +6,7 @@
 // 07/21/96 M. Gill 	Initial pthread port.
 // 04/05/96 M. Gill	Add methods GetSenderName(), and GetMessageTime().
 // 04/03/96 M. Gill	Fixed time_t to ascii conversion in FormatString(). 
-// 01/02/96 M. Gill     Initial creation.
+// 01/02/95 M. Gill     Initial creation.
 //-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <string.h>
@@ -185,12 +185,13 @@ int MOS::GetMessageTime(RESOURCE_NODE *p, char *szTimeString)
     gmtime_r(&ttime, &ltime);
 
     if(ltime.tm_year > 99)
-    {
         nyear = 100 - ltime.tm_year;
-    }
-    sprintf(szTimeString, "%02d-%02d-%02d %02d:%02d:%02d",
+    else
+        nyear = ltime.tm_year;
+    
+    sprintf(szTimeString, "%02d%02d%02d-%02d:%02d:%02d",
 			  nyear, ltime.tm_mon+1, ltime.tm_mday,
-			  ltime.tm_hour-4, ltime.tm_min,   ltime.tm_sec);
+			  ltime.tm_hour, ltime.tm_min,   ltime.tm_sec);
     return( SUCCESS );
 }
 
@@ -236,12 +237,12 @@ int MOS::FormatString(RESOURCE_NODE *p)
                 gmtime_r(&ttime, &ltime);
 
                 if(ltime.tm_year > 99)
-                {
                     nyear = 100 - ltime.tm_year;
-                }
-		sprintf(time_string, "%02d-%02d-%02d %02d:%02d:%02d",
+                else
+                    nyear = 100 - ltime.tm_year;		    
+		sprintf(time_string, "%02d%02d%02d-%02d:%02d:%02d",
 			nyear, ltime.tm_mon+1, ltime.tm_mday,
-			ltime.tm_hour-4, ltime.tm_min,   ltime.tm_sec);
+			ltime.tm_hour, ltime.tm_min,   ltime.tm_sec);
  		sprintf((char *)p->text,"%s %s %s"
 			,time_string,t->text,szFormatString);
 // 		sprintf((char *)p->text,"%s %s"
@@ -418,19 +419,3 @@ MOS::Start(int msg_depth, int msg_size, int msg_type)
                    (void *)this );              // Start function Argument
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

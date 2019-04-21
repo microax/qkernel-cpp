@@ -5,7 +5,7 @@
 // 09/17/96 M. Gill	Add SEM *ua_lock, to syncronize tcpserver to
 //			registered user agents. 
 // 07/15/96 M. Gill	Support new single instance FSM.
-// 01/15/96 M. Gill     Initial creation.
+// 01/15/95 M. Gill     Initial creation.
 // ----------------------------------------------------------------------------
 #include <stdlib.h>
 #include <stdio.h>
@@ -20,7 +20,7 @@ extern CDaemonEventLogger *event_log;
 //-------------------------------------
 // This makes the casting less painfull
 //-------------------------------------
-#define ACTION (ACTION_FUNC)TCP_SERVER::
+#define ACTION (ACTION_FUNC) &TCP_SERVER::
 
 static STATE_TABLE  tcpTable[]=
 {

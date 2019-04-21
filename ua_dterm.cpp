@@ -5,7 +5,7 @@
 // 04/23/97 M. Gill   	Fixed bug where file descriptors opened via
 //			fdopen() were not released (.ie fclose())
 // 07/15/96 M. Gill	Support new single instance FSM.
-// 04/18/96 M. Gill     Initial creation.
+// 04/18/95 M. Gill     Initial creation.
 // ----------------------------------------------------------------------------
 #include <ua_dterm.h>
 #include <stdlib.h>
@@ -26,7 +26,7 @@ extern MOS *event_log;
 //-------------------------------------
 // This makes the casting less painfull
 //-------------------------------------
-#define ACTION (ACTION_FUNC)DTERM_AGENT::
+#define ACTION (ACTION_FUNC) &DTERM_AGENT::
 
 
 static STATE_TABLE  DtermTable[]=

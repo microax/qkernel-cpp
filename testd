@@ -1,0 +1,13 @@
+#!/bin/sh
+######################################
+# start/stop test.bin deamon
+######################################
+if [ "$1" = "start" ]; then
+    ./test.bin ./ &
+    echo "test.bin started..."
+elif [ "$1" = "stop" ]; then
+    kill `cat testd.pid`
+    echo "test.bin stopped..."
+elif [ "$1" = "run" ]; then
+    ./test.bin ""
+fi

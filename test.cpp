@@ -2,7 +2,7 @@
 // ----------------------------------------------------------------------------
 // History:
 // --------
-// 07/07/96 M. Gill       Initial creation.
+// 07/07/95 M. Gill       Initial creation.
 // ----------------------------------------------------------------------------
 #include <pthread.h>
 #include <CDaemon.h>
@@ -45,7 +45,7 @@ static int Timeout( void *);
 // ---------------------------------------------------------------------------
 static int Timeout(void *t)
 {
-    event_log->SendMessage("Timer event...");
+    event_log->SendMessage("5 seconds!...");
     mTimer->Start(5, Timeout, 0);
     return(0);
 }
@@ -87,7 +87,7 @@ void TEST_DAEMON::CreateAndStartMainThreads(void)
     mTimer->Start(5,Timeout, (void *)0);
 
     
-    TCP_SERVER *tcps       = new TCP_SERVER(4866, 10);
+    TCP_SERVER *tcps       = new TCP_SERVER(9001, 10);
     UA_DIAG    *diag_ports = new UA_DIAG[10];
     
     for(i=0; i<10;i++,diag_ports++)
@@ -114,38 +114,9 @@ TEST_DAEMON::TEST_DAEMON(const char *appcode, const char *logdir)
 //---------------------------------------
 int main(int argc, char **argv)
 {
-    const char *logdir = "";
-
-    test_daemon = new TEST_DAEMON("testd", logdir);
+    test_daemon = new TEST_DAEMON("testd", argv[1]);
  
     test_daemon->RunForeground(argc, argv, MAX_PROBABLE_THREADS);
-
   
     return(0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

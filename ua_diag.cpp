@@ -2,7 +2,7 @@
 // ----------------------------------------------------------------------------
 // History:
 // --------
-// 07/15/96 M. Gill     Initial creation.
+// 07/15/95 M. Gill     Initial creation.
 // ----------------------------------------------------------------------------
 #include <stdlib.h>
 #include <stdio.h>
@@ -22,7 +22,7 @@ extern MOS *event_log;
 //-------------------------------------
 // This makes the casting less painfull
 //-------------------------------------
-#define ACTION (ACTION_FUNC)UA_DIAG::
+#define ACTION (ACTION_FUNC) &UA_DIAG::
 
 
 static STATE_TABLE DiagMenuTable[]=
@@ -100,32 +100,3 @@ void UA_DIAG::SetMainMenu(void)
     MenuTable = DiagMenuTable;
     return;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -4,7 +4,7 @@
 // --------
 // 07/15/96 M. Gill     Support new single instance FSM.
 // 04/26/95 M. Gill     Initial C++ port.
-// 01/10/88 M. Gill	Initial creation.
+// 01/10/85 M. Gill	Initial creation.
 // ----------------------------------------------------------------------------
 #ifndef STATETBL_H
 #define STATETBL_H

@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // History:
 // --------
-// 01/02/96 M. Gill	Initial creation based from rsc.h .
+// 01/02/95 M. Gill	Initial creation based from rsc.h .
 //----------------------------------------------------------------------------
 #ifndef RESOURCE_H
 #define RESOURCE_H

@@ -10,7 +10,7 @@
 //			   to replace the "diaper" functions.
 //			2) Changed API to make more general purpose.
 //
-// 03/01/96 M. Gill	Initial creation.
+// 03/01/95 M. Gill	Initial creation.
 //-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <string.h>

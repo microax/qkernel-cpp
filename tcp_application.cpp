@@ -3,7 +3,7 @@
 // History:
 // --------
 // 07/15/96 M. Gill	Support new single instance FSM.
-// 04/04/96 M. Gill     Initial creation.
+// 04/04/95 M. Gill     Initial creation.
 // ----------------------------------------------------------------------------
 #include <stdlib.h>
 #include <stdio.h>
@@ -23,7 +23,7 @@ extern MOS *event_log;
 //-------------------------------------
 // This makes the casting less painfull
 //-------------------------------------
-#define ACTION (ACTION_FUNC)TCP_APPLICATION::
+#define ACTION (ACTION_FUNC) &TCP_APPLICATION::
 
 
 static STATE_TABLE tcp_stub_table[]=

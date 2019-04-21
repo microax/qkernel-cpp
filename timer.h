@@ -3,7 +3,7 @@
 // History:
 // --------
 // 04/26/95 M. Gill	Initial C++ (QCYCLE) port.
-// 01/10/88 M. Gill	Initial creation.
+// 01/10/85 M. Gill	Initial creation.
 //-----------------------------------------------------------------------------
 #ifndef TIMER_H
 #define TIMER_H
@@ -42,7 +42,7 @@ public:
     void Start(int ticks, int (*func)(void *), void *arg);
     void Stop(void);
     void Sleep(int ticks);
-    void Main(void *);
+    static int  Main(TIMER *);
     static void Remove(TIMER_NODE *t);
     static void Insert(TIMER_NODE *t);
     static int timeout(void *p);

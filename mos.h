@@ -5,7 +5,7 @@
 // 09/29/96 M. Gill	Changed scope of methods to public virtual.
 // 07/21/96 M. Gill     Initial pthread port.
 // 04/05/96 M. Gill	Add methods GetSenderName(), and GetMessageTime().
-// 01/03/96 M. Gill	Initial creation.
+// 01/03/95 M. Gill	Initial creation.
 //----------------------------------------------------------------------------
 #ifndef MOS_H
 #define MOS_H

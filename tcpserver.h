@@ -4,7 +4,7 @@
 // --------
 // 09/17/96 M. Gill     Add ua_lock.
 // 07/15/96 M. Gill     Support new single instance FSM.
-// 01/15/96 M. Gill	Initial creation.
+// 01/15/95 M. Gill	Initial creation.
 //----------------------------------------------------------------------------
 #ifndef TCPSERVER_H
 #define TCPSERVER_H
